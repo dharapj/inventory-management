@@ -1,0 +1,189 @@
+#root {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/****/
+body {
+  background-color: black;
+}
+table {
+  border-collapse: collapse;
+  border-radius: 12px !important;
+  padding: 10px;
+  width: 100%;
+  background: #212124;
+
+}
+
+th, td {
+  border-bottom: 1px solid rgba(158, 150, 150, 0.381);
+  padding: 12px;
+  text-align: left;
+}
+th div{
+  width: fit-content; 
+  padding: 5px; 
+  background: rgb(22, 23, 24);
+  color: rgb(123, 136, 69); 
+  border-radius: 5px;
+}
+
+td{
+  color: white;  
+}
+
+
+.input_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.input {
+  width: calc(50% - 10px);
+}
+
+.form-control {
+  background: #3f413d !important;
+  border: none !important;
+  color:grey
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgba(164, 186, 70,.25) !important
+}
+
+.modal-content {
+  background: #292b27 !important;
+  color: white;
+}
+
+.modal-header {
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+
+.modal-footer {
+  border-top: none !important;
+}
+.btn-close{
+  color: rgb(123, 136, 69);
+}
+
+
+.btn-light {
+  color: #a4ba46 !important;
+  background: #272826 !important;
+  border: none !important;
+  width: 32px;
+  height: 32px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-secondary {
+  background: none !important;
+  border: none !important;
+  color: #a4ba46 !important
+}
+
+.btn-primary {
+  background: #434541 !important;
+  border: none !important;
+  color: #a4ba46 !important
+}
+
+
+.modal-title {
+  display: flex;
+  flex-direction: column;
+  font-size: 24px;
+}
+
+.modal-title .subtitle {
+  font-size: 16px;
+}
+
+.summary-widget .card{
+  background: rgb(36, 51, 37);
+  color: white
+}
+
+.summary-widget p{
+  font-size: 28px;
+  padding-left: 42px;
+  text-align: left;
+}
+
+.card-title{
+  font-size: 12px;
+  text-align: left;;
+}
+
+.card-title svg{
+  font-size: 30px;
+}
+.card-body{
+  padding: 0px;
+}
+.card{
+  padding: 1em
+}
+
+.modal-body input{
+  color: grey;
+}
+
+tr.disabled svg{
+  opacity: 0.5;
+}
+
+.container{
+  width: 100%;
+  max-width:100%;
+}
+
+.navbar-brand{
+  font-size: 34px;
+}

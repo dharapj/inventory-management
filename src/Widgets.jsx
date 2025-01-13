@@ -1,0 +1,27 @@
+import React from "react";
+import { useSelector } from "react-redux";
+
+const Widgets = () => {
+  const inventory = useSelector((state) => state.inventory.data);
+
+  const totalProducts = inventory.length;
+  const totalStoreValue = inventory.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
+  const outOfStock = inventory.filter((item) => item.quantity === 0).length;
+  const totalCategories = new Set(inventory.map((item) => item.category)).size;
+
+  return (
+    <>
+      
+      <div className="widgets">
+        <div>Total Products: {totalProducts}</div>
+        <div>Total Store Value: ${totalStoreValue}</div>
+        <div>Out of Stock: {outOfStock}</div>
+        <div>Categories: {totalCategories}</div>
+      </div></>
+  );
+};
+
+export default Widgets;
