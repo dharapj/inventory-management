@@ -48,7 +48,7 @@ const InventoryTable = () => {
   };
 
   return (
-    <div className="table-container">
+    <div className={isAdmin ? "table-container": "table-container disabled-table"}>
       <table>
         <thead>
           <tr>
@@ -76,7 +76,7 @@ const InventoryTable = () => {
           {inventory.map((item) => (
             <tr
               key={item.name}
-              className={disabledProducts.has(item.name) || !isAdmin ? "disabled" : ""}
+              className={disabledProducts.has(item.name) ? "disabled" : ""}
             >
               <td>{item.name}</td>
               <td>{item.category}</td>

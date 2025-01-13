@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Modal, Button, Form, Row, Col } from "react-bootstrap";
+import { Modal, Button, Form, Row, Col, Tooltip, OverlayTrigger } from "react-bootstrap";
 import { sanitizePrice } from "../utils";
+import { FaInfoCircle } from 'react-icons/fa';
 
 const EditProductModal = ({ product, onSave, onCancel }) => {
   const [updatedProduct, setUpdatedProduct] = useState({
@@ -33,10 +34,15 @@ const EditProductModal = ({ product, onSave, onCancel }) => {
   const handleSave = () => {
     onSave(updatedProduct);
   };
+    const renderTooltip = (props) => (
+      <Tooltip id="info-tooltip" {...props}>
+        The value is automatically calculated based on the price and quantity.
+      </Tooltip>
+    );
 
   return (
     <Modal show onHide={onCancel} centered>
-      <Modal.Header closeButton>
+      <Modal.Header closeButton  className="custom-close-button">
       <Modal.Title>
           Edit product
           <span className='subtitle'>{updatedProduct.name}</span>
@@ -64,9 +70,9 @@ const EditProductModal = ({ product, onSave, onCancel }) => {
                   type="number"
                   min={0}
                   name="price"
-                  value={`${sanitizePrice(updatedProduct.price)}`} // Add $ sign for display
+                  value={`${sanitizePrice(updatedProduct.price)}`}
                   onChange={handleChange}
-                  onBlur={handleBlur} // Format on blur
+                  onBlur={handleBlur}
                   placeholder="Enter price"
                 />
               </Form.Group>
@@ -91,6 +97,14 @@ const EditProductModal = ({ product, onSave, onCancel }) => {
             <Col md={6}>
             <Form.Group controlId="productValue">
             <Form.Label>Value</Form.Label>
+            <OverlayTrigger
+          placement="top"
+          overlay={renderTooltip}
+        >
+          <span className="info-tooltip-icon">
+            <FaInfoCircle style={{ cursor: 'pointer', color: 'rgb(123, 136, 69)' }} />
+          </span>
+        </OverlayTrigger>
             <Form.Control
               type="text"
               name="value"
